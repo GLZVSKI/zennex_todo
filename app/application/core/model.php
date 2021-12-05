@@ -1,10 +1,11 @@
 <?php
+
 namespace application\core;
 
-class Model
-{
-    public function get_data()
-    {
+use application\services\Database;
 
-    }
+class Model extends Database
+{
+    public $tableName;
+    public $id; // Первичный ключ
 }
