@@ -1,8 +1,8 @@
 <?php
 
-namespace application\models;
+namespace php\models;
 
-use application\core\Model;
+use php\core\Model;
 
 class Model_task extends Model
 {

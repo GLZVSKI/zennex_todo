@@ -1,10 +1,14 @@
 <?php
 
-namespace application\services;
+namespace php\services;
 
-class Connect
+class ConnectionDB
 {
-    use settings_db;
+    private $host = 'mysql';
+    private $port = '3306';
+    private $user = 'user';
+    private $password = 'password';
+    private $dbName = 'database';
 
     public $db;
     private static $instances;
@@ -18,7 +22,7 @@ class Connect
         }
     }
 
-    public static function getInstance(): Connect
+    public static function getInstance(): ConnectionDB
     {
         $cls = static::class;
         if (!isset(self::$instances)) {

@@ -11,6 +11,7 @@
     <title>TODO</title>
 </head>
 <body>
-<?php include 'application/views/' . $content_view; ?>
+<?php include 'php/views/' . $content_view; ?>
 </body>
 </html>
+

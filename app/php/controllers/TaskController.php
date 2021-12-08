@@ -1,12 +1,12 @@
 <?php
 
-namespace application\controllers;
+namespace php\controllers;
 
-use application\core\Controller;
-use application\core\View;
-use application\models\Model_task;
+use php\core\Controller;
+use php\core\View;
+use php\models\Model_task;
 
-class Controller_task extends Controller
+class TaskController extends Controller
 {
     public function __construct()
     {
@@ -17,7 +17,7 @@ class Controller_task extends Controller
 
     function action_index()
     {
-        $this->view->generate('task_view.php', $this->view->template_view);
+        $this->view->generate('task.php', $this->view->template_view);
     }
 
     function action_get()

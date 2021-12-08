@@ -1,11 +1,11 @@
 <?php
 
-namespace application\controllers;
+namespace php\controllers;
 
-use application\core\Controller;
-use application\models\Model_priority;
+use php\core\Controller;
+use php\models\Model_priority;
 
-class Controller_priority extends Controller
+class PriorityController extends Controller
 {
     function __construct()
     {

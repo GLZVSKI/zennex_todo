@@ -1,8 +1,8 @@
 <?php
 
-namespace application\services;
+namespace php\services;
 
-include "connect_database.php";
+include "ConnectionDB.php";
 
 class Database
 {
@@ -11,7 +11,7 @@ class Database
     public function __construct()
     {
         try {
-            self::$connect = Connect::getInstance();
+            self::$connect = ConnectionDB::getInstance();
         } catch (\Exception $e) {
             die("Error: <pre>$e</pre>");
         }
