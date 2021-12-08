@@ -89,11 +89,12 @@ export default class Task {
         return false;
     }
 
-    changeStatusComplete(id) {
-        return Number((this.notepadObj[id]['status'] = Number(this.notepadObj[id]['status']) === 0 ? '1' : '0'));
+    changeStatus(id) {
+        // В статусе задачи должно храниться число, либо валидировать на сервере (когда доберусь сделаю)
+        return this.notepadObj[id].status = Number(!Number(this.notepadObj[id].status));
     }
 
-    getIndex(id) { // Получение индекса по id объекта
+    getIndex(id) {
         return this.notepadObj.findIndex(item => item.id == id);
     }
 
@@ -103,7 +104,7 @@ export default class Task {
         task.checkbox.addEventListener('click', () => {
             let index = this.getIndex(obj.id);
 
-            if (this.changeStatusComplete(index)) { // Если задача отмечена как выполнена
+            if (this.changeStatus(index)) {
                 this.update(this.notepadObj[index]);
                 this.notepadObj.push(this.notepadObj[index]);
                 this.notepadObj.splice(index, 1);
