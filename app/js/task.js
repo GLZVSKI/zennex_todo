@@ -1,4 +1,4 @@
-import PostData from './fetch.js';
+import fetchPost from './fetch.js';
 import Render from "./render.js";
 
 let Draw = new Render();
@@ -33,13 +33,13 @@ export default class Task {
     }
 
     createTask(obj) {
-        return PostData('task/create', {
+        return fetchPost('task/create', {
             task: obj,
         });
     }
 
     getTask() {
-        PostData('/task/get', {}).then((data) => {
+        fetchPost('/task/get', {}).then((data) => {
             this.notepadObj = data['tasks'];
             this.sort('priority');
             this.sort('status');
@@ -49,11 +49,11 @@ export default class Task {
     }
 
     update(task) {
-        return PostData('task/update', {task: task});
+        return fetchPost('task/update', {task: task});
     }
 
     getPriorities() {
-        PostData('priority/get', {}).then((data) => {
+        fetchPost('priority/get', {}).then((data) => {
             this.priorities = data['priority'];
         });
     }
@@ -71,7 +71,7 @@ export default class Task {
         let conf = confirm('Удалить задачу?');
 
         if (conf) {
-            PostData('task/delete', {
+            fetchPost('task/delete', {
                 id: this.notepadObj[id].id,
             }).then((data) => {
                 if (data['response']) {
@@ -90,7 +90,7 @@ export default class Task {
     }
 
     changeStatus(id) {
-        // В статусе задачи должно храниться число, либо валидировать на сервере (когда доберусь сделаю)
+        // В статусе задачи должно храниться число, либо валидировать на сервере
         return this.notepadObj[id].status = Number(!Number(this.notepadObj[id].status));
     }
 

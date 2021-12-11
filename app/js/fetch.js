@@ -1,9 +1,9 @@
-export default async function PostData(url = '', data = {}) {
+export default async function fetchPost(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'php/json',
+            'Accept': 'php/json'
         },
         body: JSON.stringify(data),
     });

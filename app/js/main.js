@@ -6,5 +6,3 @@ let task = new Task();
 task.getTask();
 
 btnNewTask.onclick = () => task.openWindowNewTask();
-
-

@@ -1,9 +1,10 @@
+import * as svg from './bootstrap/js/svg.js';
+
 let placeRenderingWindows = document.getElementById('placeRenderingWindows');
 let shadow = document.getElementById('shadow');
 let taskList = document.getElementById('taskList');
 
 export default class Render {
-
     task(obj) {
         let container = document.createElement('div');
         let containerCheckbox = document.createElement('div');
@@ -16,10 +17,7 @@ export default class Render {
 
         btnEditTask.className = 'btn priority d-flex justify-content-end';
 
-        btnEditTask.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list text-light" ' +
-            'fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 ' +
-            '0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.' +
-            '5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>';
+        btnEditTask.innerHTML = svg.bi_pencil_square;
 
         taskPriority.className = 'text-white px-1 d-flex justify-content-end mr-1';
         taskPriority.innerHTML = obj.priorityTitle;
@@ -28,7 +26,7 @@ export default class Render {
             checkbox.checked = true;
             container.className = 'bg-secondary';
             titleTask.style.textDecoration = 'line-through';
-        }else {
+        } else {
             checkbox.checked = false;
             container.className = 'bg-dark';
         }
@@ -95,9 +93,7 @@ export default class Render {
         let buttonCloseWindow = document.createElement('button');
         buttonCloseWindow.classList = 'btn position-absolute';
         buttonCloseWindow.style = 'top: 4px; right: 4px';
-        buttonCloseWindow.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\n' +
-            '<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>\n' +
-            '</svg>';
+        buttonCloseWindow.innerHTML = svg.bi_x_circle_fill;
 
         let buttonSave = document.createElement('button');
         buttonSave.classList = 'btn btn-primary col-12 mt-3';
@@ -166,16 +162,12 @@ export default class Render {
         buttonDelete.classList = 'btn position-absolute';
         buttonDelete.style = 'top: 4px; right: 50px';
         buttonDelete.id = 'deleteTask';
-        buttonDelete.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\n' +
-            '<path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>\n' +
-            '</svg>';
+        buttonDelete.innerHTML = svg.bi_trash_fill;
 
         let buttonCloseWindow = document.createElement('button');
         buttonCloseWindow.classList = 'btn position-absolute';
         buttonCloseWindow.style = 'top: 4px; right: 4px';
-        buttonCloseWindow.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\n' +
-            '<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>\n' +
-            '</svg>';
+        buttonCloseWindow.innerHTML = svg.bi_x_circle_fill;
 
         let buttonSave = document.createElement('button');
         buttonSave.classList = 'btn btn-primary col-12 mt-3';
