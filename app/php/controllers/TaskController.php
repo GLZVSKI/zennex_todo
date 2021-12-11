@@ -4,13 +4,13 @@ namespace php\controllers;
 
 use php\core\Controller;
 use php\core\View;
-use php\models\Model_task;
+use php\models\Task;
 
 class TaskController extends Controller
 {
     public function __construct()
     {
-        $this->model = new Model_task();
+        $this->model = new Task();
         $this->view = new View();
         $this->json = json_decode(file_get_contents('php://input'), false);
     }

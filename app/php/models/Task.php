@@ -4,7 +4,7 @@ namespace php\models;
 
 use php\core\Model;
 
-class Model_task extends Model
+class Task extends Model
 {
     public $tableName = 'tasks';
     public $title;
@@ -41,7 +41,7 @@ class Model_task extends Model
 
     public function creation(object $task)
     {
-        $model = new Model_task();
+        $model = new Task();
         $model->title = $task->title;
         $model->priority = $task->priority;
         return $model->create();

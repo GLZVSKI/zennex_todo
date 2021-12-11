@@ -3,13 +3,13 @@
 namespace php\controllers;
 
 use php\core\Controller;
-use php\models\Model_priority;
+use php\models\Priority;
 
 class PriorityController extends Controller
 {
     function __construct()
     {
-        $this->model = new Model_priority();
+        $this->model = new Priority();
     }
 
     function action_get()

@@ -4,7 +4,7 @@ namespace php\models;
 
 use php\core\Model;
 
-class Model_priority extends Model
+class Priority extends Model
 {
     public $tableName = 'priorities';
     public $title;
