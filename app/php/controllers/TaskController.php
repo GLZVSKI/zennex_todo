@@ -3,6 +3,7 @@
 namespace php\controllers;
 
 use php\core\Controller;
+use php\core\Validation;
 use php\core\View;
 use php\models\Task;
 
@@ -33,12 +34,14 @@ class TaskController extends Controller
     {
         $task = $this->json->task;
 
-        if (!is_object($task)) return false;
-
-        $data = $this->model->update($task);
+        if (is_object($task)) {
+            if (!Validation::empty_string($task->title)) {
+                $data = $this->model->creation($task);
+            }
+        };
 
         echo json_encode(array(
-            'response' => $data,
+            'response' => $data ?? false,
         ));
     }
 
@@ -59,12 +62,14 @@ class TaskController extends Controller
     {
         $task = $this->json->task;
 
-        if (!is_object($task)) return false;
-
-        $data = $this->model->creation($task);
+        if (is_object($task)) {
+            if (!Validation::empty_string($task->title)) {
+                $data = $this->model->creation($task);
+            }
+        };
 
         echo json_encode(array(
-            'response' => $data,
+            'response' => $data ?? false,
         ));
     }
 
