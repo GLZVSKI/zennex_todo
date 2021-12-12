@@ -15,6 +15,11 @@ export default class Task {
             let title = windowNewTask.inputTask;
             let priority = windowNewTask.select;
 
+            if (!this.isEmptyString(title.value)) {
+                alert('Поле название задачи обязательно для заполнения.');
+                return false;
+            }
+
             let obj = {
                 title: title.value,
                 priority: priority.value,
@@ -30,6 +35,10 @@ export default class Task {
                 }
             });
         });
+    }
+
+    isEmptyString(str) {
+        return str.trim() !== "";
     }
 
     createTask(obj) {
@@ -126,6 +135,11 @@ export default class Task {
             windowEditTask.buttonSave.addEventListener('click', () => {
                 let title = windowEditTask.inputTask;
                 let priority = windowEditTask.select;
+
+                if (!this.isEmptyString(title.value)) {
+                    alert('Поле название задачи обязательно для заполнения.');
+                    return false;
+                }
 
                 this.notepadObj[index].title = title.value;
                 this.notepadObj[index].priority = priority.value;
