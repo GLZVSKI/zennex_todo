@@ -1,7 +1,7 @@
 # zennex_todo
 Настройка подключения к БД: 
 
-app/php/services/Connection.php
+app/php/services/ConnectionDB.php
 
 Запуск проекта:
 
