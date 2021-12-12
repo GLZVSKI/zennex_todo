@@ -1,9 +1,8 @@
 # zennex_todo
 Настройка подключения к БД: 
 
-app/application/services/settings_db.php
+app/php/services/Connection.php
 
 Запуск проекта:
 
 docker-compose up -d --build
-
