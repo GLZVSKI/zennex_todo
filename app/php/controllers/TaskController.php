@@ -36,7 +36,7 @@ class TaskController extends Controller
 
         if (is_object($task)) {
             if (!Validation::empty_string($task->title)) {
-                $data = $this->model->creation($task);
+                $data = $this->model->update($task);
             }
         };
 
